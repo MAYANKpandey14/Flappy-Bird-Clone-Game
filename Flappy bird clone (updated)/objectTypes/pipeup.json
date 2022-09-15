@@ -1,0 +1,68 @@
+{
+	"name": "pipeUP",
+	"plugin-id": "Sprite",
+	"sid": 858179579977221,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "custom",
+			"name": "Custom",
+			"sid": 710474203819207
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 878823136263040
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 52,
+						"height": 320,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 797467,
+						"collisionPoly": {
+							"points": [
+								0.038461538461538464,
+								0.5,
+								0.038461538461538464,
+								0.009375000000000022,
+								0.5,
+								0.0031250000000000444,
+								0.9423076923076923,
+								0.009375000000000022,
+								0.9423076923076923,
+								0.5,
+								0.9807692307692307,
+								1,
+								0.5,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 853828226433834,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

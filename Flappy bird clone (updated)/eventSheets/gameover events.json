@@ -1,0 +1,108 @@
+{
+	"name": "gameOver Events",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 817250995194947,
+					"parameters": {
+						"object": "playAgain"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 223992713690147,
+					"parameters": {
+						"layout": "playState"
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 769330343022431
+				}
+			],
+			"sid": 522957238831472
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 539329471715184
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "gameover_score",
+					"sid": 274333802751301,
+					"parameters": {
+						"text": "Score"
+					}
+				}
+			],
+			"sid": 676498523642183
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 904042359374122,
+					"parameters": {
+						"variable": "duration",
+						"comparison": 1,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "timeUp",
+					"sid": 382880883926924,
+					"parameters": {
+						"opacity": "0"
+					}
+				}
+			],
+			"sid": 660441670452144
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 758722805618068,
+					"parameters": {
+						"variable": "duration",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "timeUp",
+					"sid": 272490718030466,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 999170720545551
+		}
+	],
+	"sid": 521941726075867
+}
