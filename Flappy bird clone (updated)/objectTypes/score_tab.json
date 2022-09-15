@@ -1,0 +1,63 @@
+{
+	"name": "score_tab",
+	"plugin-id": "Sprite",
+	"sid": 598579970331681,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "shadowcaster",
+			"name": "ShadowCaster",
+			"sid": 849464694229086
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 330,
+						"height": 130,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6537950,
+						"collisionPoly": {
+							"points": [
+								0.030303030303030304,
+								0.07692307692307693,
+								0.5,
+								0,
+								0.9666666666666667,
+								0.07692307692307693,
+								0.996969696969697,
+								0.5,
+								0.9666666666666667,
+								0.9153846153846154,
+								0.5,
+								0.9923076923076923,
+								0.030303030303030304,
+								0.9153846153846154,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 105749658801114,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

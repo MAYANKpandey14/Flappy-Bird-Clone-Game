@@ -1,0 +1,78 @@
+{
+	"name": "mainMenu Events",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 682369686612711,
+					"parameters": {
+						"object": "playButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 325516288802858,
+					"parameters": {
+						"layout": "playState"
+					}
+				}
+			],
+			"sid": 928305867780390
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 617628433337594
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "main_ground",
+					"sid": 601868484081463,
+					"behaviorType": "Custom",
+					"parameters": {
+						"which": "overall",
+						"speed": "-70"
+					}
+				}
+			],
+			"sid": 666269228276152
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "main_ground",
+					"sid": 428116479922448,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-48"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "main_ground",
+					"sid": 128367768028538,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 655788814911249
+		}
+	],
+	"sid": 458343820260847
+}

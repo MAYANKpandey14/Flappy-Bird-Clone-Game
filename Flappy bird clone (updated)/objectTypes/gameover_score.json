@@ -1,0 +1,15 @@
+{
+	"name": "gameover_score",
+	"plugin-id": "Text",
+	"sid": 149199983927322,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "shadowcaster",
+			"name": "ShadowCaster",
+			"sid": 930614455499466
+		}
+	],
+	"effectTypes": []
+}

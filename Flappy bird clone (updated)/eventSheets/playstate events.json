@@ -1,0 +1,758 @@
+{
+	"name": "playState Events",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 478688563159005
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "play_ground",
+					"sid": 845014935283825,
+					"behaviorType": "Custom",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "-125"
+					}
+				}
+			],
+			"sid": 250703455781350
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "play_ground",
+					"sid": 795305363729738,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-48"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "play_ground",
+					"sid": 249175068653470,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 860447473340248
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 191638872231798
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "bird",
+					"sid": 648789641309723,
+					"parameters": {
+						"instance-variable": "isDead",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-y",
+					"objectClass": "bird",
+					"sid": 513870784680898,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-y": "-500"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 460228587052944,
+					"parameters": {
+						"audio-file": "wing",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 362866680117585
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 415766513338440
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "play_info",
+					"sid": 570267539909609
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "bird",
+					"sid": 437618363782688,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "play_info",
+					"sid": 295632553970810,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 606358492351818
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 765600105599587
+		},
+		{
+			"eventType": "variable",
+			"name": "gap",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 213208738681143
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 668788191600532,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "play_info",
+					"sid": 449308331126242,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 366839237940935,
+					"parameters": {
+						"object-to-create": "pipeUP",
+						"layer": "0",
+						"x": "LayoutWidth+50",
+						"y": "random(50,250)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 594032856425208,
+					"parameters": {
+						"object-to-create": "pipeDown",
+						"layer": "0",
+						"x": "LayoutWidth+50",
+						"y": "pipeUP.Y+gap",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 172276950924441,
+					"parameters": {
+						"object-to-create": "count",
+						"layer": "0",
+						"x": "LayoutWidth+50",
+						"y": "pipeUP.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "pipeUP",
+					"sid": 753592838795807,
+					"behaviorType": "Custom",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "-125"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "pipeDown",
+					"sid": 523818383751704,
+					"behaviorType": "Custom",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "-125"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "count",
+					"sid": 757478859442024,
+					"behaviorType": "Custom",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "-125"
+					}
+				}
+			],
+			"sid": 693793715888781
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "pipeUP",
+					"sid": 697470611387900,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "pipeUP",
+					"sid": 968231726198633
+				}
+			],
+			"sid": 612792246923093
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-jumping",
+					"objectClass": "bird",
+					"sid": 832329978214684,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "bird",
+					"sid": 793190410053956,
+					"parameters": {
+						"angle": "-12.5"
+					}
+				}
+			],
+			"sid": 140685401650412
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-falling",
+					"objectClass": "bird",
+					"sid": 457619245563021,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "bird",
+					"sid": 446117943944612,
+					"parameters": {
+						"angle": "15"
+					}
+				}
+			],
+			"sid": 791569872359024
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bird",
+					"sid": 598429499529453,
+					"parameters": {
+						"object": "pipeDown"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 583065804556668,
+					"parameters": {
+						"layout": "gameOver"
+					}
+				}
+			],
+			"sid": 261231060311034
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bird",
+					"sid": 348045345749129,
+					"parameters": {
+						"object": "pipeUP"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 541889072854018,
+					"parameters": {
+						"layout": "gameOver"
+					}
+				}
+			],
+			"sid": 137226424406954
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bird",
+					"sid": 853615146924824,
+					"parameters": {
+						"object": "play_ground"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 768775886101451,
+					"parameters": {
+						"layout": "gameOver"
+					}
+				}
+			],
+			"sid": 486798129188072
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "pipeDown",
+					"sid": 824055478632073,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "pipeDown",
+					"sid": 343941949600790
+				}
+			],
+			"sid": 385002883506850
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "count",
+					"sid": 475683462083229,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "count",
+					"sid": 268004088622977
+				}
+			],
+			"sid": 656586518922248
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "bird",
+					"sid": 457249241737735,
+					"parameters": {
+						"object": "count"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 302906961410701
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 250508468523596,
+					"parameters": {
+						"variable": "Score",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 129977656011017,
+					"parameters": {
+						"text": "Score"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 278706213949949,
+					"parameters": {
+						"audio-file": "point",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 565930937191582
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bird",
+					"sid": 559512227520795,
+					"parameters": {
+						"object": "play_ground"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "bird",
+					"sid": 156397137832684,
+					"parameters": {
+						"instance-variable": "isDead",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "bird",
+					"sid": 268986250068552,
+					"parameters": {
+						"instance-variable": "isDead",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 443532098811335
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bird",
+					"sid": 329215244635747,
+					"parameters": {
+						"object": "pipeDown"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "bird",
+					"sid": 994514823723083,
+					"parameters": {
+						"instance-variable": "isDead",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "bird",
+					"sid": 534988530052020,
+					"parameters": {
+						"instance-variable": "isDead",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 741764779267970
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bird",
+					"sid": 343824073206269,
+					"parameters": {
+						"object": "pipeUP"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "bird",
+					"sid": 249821693242970,
+					"parameters": {
+						"instance-variable": "isDead",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "bird",
+					"sid": 407589812909438,
+					"parameters": {
+						"instance-variable": "isDead",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 203950914431255
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "bird",
+					"sid": 507103986190012,
+					"parameters": {
+						"instance-variable": "isDead",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 175829279597529
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "play_ground",
+					"sid": 363057882811997,
+					"behaviorType": "Custom",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "pipeDown",
+					"sid": 877901632287775,
+					"behaviorType": "Custom",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "pipeUP",
+					"sid": 479903418263026,
+					"behaviorType": "Custom",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "count",
+					"sid": 346672039328915,
+					"behaviorType": "Custom",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 265795248261532,
+					"parameters": {
+						"audio-file": "die",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 680468789771023
+		},
+		{
+			"eventType": "variable",
+			"name": "noTouch",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "true-touch , false- no touch",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 125804103039946
+		},
+		{
+			"eventType": "variable",
+			"name": "duration",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "total time",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 484208476755519
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 286972320936132
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 860689020123692,
+					"parameters": {
+						"variable": "noTouch",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 837261640076227
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 394581415514590,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 206079903373882,
+					"parameters": {
+						"variable": "noTouch"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 295541404106455,
+					"parameters": {
+						"variable": "duration",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Ttime",
+					"sid": 921666317338067,
+					"parameters": {
+						"text": "duration"
+					}
+				}
+			],
+			"sid": 799208887816965
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 784945840399469,
+					"parameters": {
+						"variable": "duration",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 586070125901745,
+					"parameters": {
+						"layout": "gameOver"
+					}
+				}
+			],
+			"sid": 106525822681619
+		}
+	],
+	"sid": 506313330235079
+}
